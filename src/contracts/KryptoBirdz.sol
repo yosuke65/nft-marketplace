@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 import "./ERC721Connector.sol";
 
 contract KryptoBird is ERC721Connector {
-    string[] public KryptoBirdz;
+    string[] public kryptoBirdz;
 
     mapping(string => bool) _kryptoBirdzExists;
 
@@ -12,8 +12,8 @@ contract KryptoBird is ERC721Connector {
             !_kryptoBirdzExists[_kryptoBird],
             "Error - kryptoBird already exists"
         );
-        KryptoBirdz.push(_kryptoBird);
-        uint256 _id = KryptoBirdz.length - 1;
+        kryptoBirdz.push(_kryptoBird);
+        uint256 _id = kryptoBirdz.length - 1;
 
         _mint(msg.sender, _id);
         _kryptoBirdzExists[_kryptoBird] = true;
